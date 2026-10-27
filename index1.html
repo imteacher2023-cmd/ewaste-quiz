@@ -1,0 +1,311 @@
+
+<!DOCTYPE html>
+<html lang="kn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>E-Waste Quiz</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, "Noto Sans Kannada", sans-serif;
+  background: linear-gradient(135deg, #dfffea, #e4edff);
+  color: #18352b;
+}
+
+header {
+  background: #087443;
+  color: white;
+  text-align: center;
+  padding: 25px 12px;
+}
+
+header h1 {
+  margin: 0 0 10px;
+  font-size: 27px;
+}
+
+header p {
+  margin: 5px;
+}
+
+.container {
+  max-width: 750px;
+  margin: 20px auto;
+  padding: 15px;
+}
+
+.info {
+  text-align: center;
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 18px;
+}
+
+.question {
+  background: white;
+  padding: 18px;
+  margin-bottom: 15px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px #00000010;
+}
+
+.question h3 {
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+label {
+  display: block;
+  background: #f1f8f4;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 8px;
+  cursor: pointer;
+  line-height: 1.6;
+}
+
+label:hover {
+  background: #d7f5e3;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  margin-right: 8px;
+  accent-color: #087443;
+}
+
+button {
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 8px 0;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.submit {
+  background: #087443;
+  color: white;
+}
+
+.reset {
+  background: #e2e8f0;
+  color: #18352b;
+}
+
+#result {
+  display: none;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  margin-top: 18px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #476256;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>♻️ E-WASTE QUIZ</h1>
+  <p>ಇ-ತ್ಯಾಜ್ಯ ವಿಶೇಷ ಅಭಿಯಾನ</p>
+  <p>6ನೇ, 7ನೇ ಮತ್ತು 8ನೇ ತರಗತಿ</p>
+</header>
+
+<div class="container">
+
+  <div class="info">
+    <h3>ಜ್ಞಾನವೇ ಶಕ್ತಿ 🌱</h3>
+    <p>ಎಲ್ಲಾ 10 ಪ್ರಶ್ನೆಗಳಿಗೆ ಉತ್ತರಿಸಿ.</p>
+    <p>ಪ್ರತಿ ಸರಿಯಾದ ಉತ್ತರಕ್ಕೆ 1 ಅಂಕ.</p>
+  </div>
+
+  <form id="quiz">
+
+    <div class="question">
+      <h3>1. ಇ-ತ್ಯಾಜ್ಯ (E-Waste) ಎಂದರೆ ಯಾವುದು?</h3>
+      <label><input type="radio" name="q1" value="A"> A) ಹಳೆಯ ಕಾಗದಗಳು</label>
+      <label><input type="radio" name="q1" value="B"> B) ಬಳಕೆಗೆ ಬಾರದ ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಾಧನಗಳು</label>
+      <label><input type="radio" name="q1" value="C"> C) ತರಕಾರಿ ಸಿಪ್ಪೆಗಳು</label>
+      <label><input type="radio" name="q1" value="D"> D) ಒಣ ಎಲೆಗಳು</label>
+    </div>
+
+    <div class="question">
+      <h3>2. ಇವುಗಳಲ್ಲಿ ಯಾವುದು ಇ-ತ್ಯಾಜ್ಯ?</h3>
+      <label><input type="radio" name="q2" value="A"> A) ಬಾಳೆಹಣ್ಣಿನ ಸಿಪ್ಪೆ</label>
+      <label><input type="radio" name="q2" value="B"> B) ಹಳೆಯ ಮೊಬೈಲ್ ಫೋನ್</label>
+      <label><input type="radio" name="q2" value="C"> C) ಮರದ ತುಂಡು</label>
+      <label><input type="radio" name="q2" value="D"> D) ಹತ್ತಿ ಬಟ್ಟೆ</label>
+    </div>
+
+    <div class="question">
+      <h3>3. ಇ-ತ್ಯಾಜ್ಯವನ್ನು ಎಲ್ಲೆಂದರಲ್ಲಿ ಎಸೆದರೆ ಏನಾಗಬಹುದು?</h3>
+      <label><input type="radio" name="q3" value="A"> A) ಮಣ್ಣು ಮತ್ತು ನೀರು ಕಲುಷಿತವಾಗಬಹುದು</label>
+      <label><input type="radio" name="q3" value="B"> B) ನೀರು ಶುದ್ಧವಾಗುತ್ತದೆ</label>
+      <label><input type="radio" name="q3" value="C"> C) ಮರಗಳು ವೇಗವಾಗಿ ಬೆಳೆಯುತ್ತವೆ</label>
+      <label><input type="radio" name="q3" value="D"> D) ಪರಿಸರಕ್ಕೆ ಯಾವುದೇ ಪರಿಣಾಮವಿಲ್ಲ</label>
+    </div>
+
+    <div class="question">
+      <h3>4. ಹಳೆಯ ಮೊಬೈಲ್ ಫೋನ್ ಅನ್ನು ಎಲ್ಲಿ ನೀಡಬೇಕು?</h3>
+      <label><input type="radio" name="q4" value="A"> A) ರಸ್ತೆ ಬದಿಯಲ್ಲಿ</label>
+      <label><input type="radio" name="q4" value="B"> B) ಕೆರೆಯಲ್ಲಿ</label>
+      <label><input type="radio" name="q4" value="C"> C) ಅಧಿಕೃತ ಇ-ತ್ಯಾಜ್ಯ ಸಂಗ್ರಹ ಕೇಂದ್ರದಲ್ಲಿ</label>
+      <label><input type="radio" name="q4" value="D"> D) ಸುಡಬೇಕು</label>
+    </div>
+
+    <div class="question">
+      <h3>5. Reduce, Reuse, Recycle ಎಂದರೆ ಏನು?</h3>
+      <label><input type="radio" name="q5" value="A"> A) ಕಡಿಮೆ ಬಳಕೆ, ಮರುಬಳಕೆ, ಮರುಸಂಸ್ಕರಣೆ</label>
+      <label><input type="radio" name="q5" value="B"> B) ಹೆಚ್ಚು ಖರೀದಿ ಮತ್ತು ಬಳಕೆ</label>
+      <label><input type="radio" name="q5" value="C"> C) ಸುಡುವುದು ಮತ್ತು ಎಸೆಯುವುದು</label>
+      <label><input type="radio" name="q5" value="D"> D) ತೊಳೆಯುವುದು ಮತ್ತು ಒಣಗಿಸುವುದು</label>
+    </div>
+
+    <div class="question">
+      <h3>6. ಇವುಗಳಲ್ಲಿ ಯಾವುವು ಇ-ತ್ಯಾಜ್ಯಕ್ಕೆ ಸೇರುತ್ತವೆ? (ಎಲ್ಲಾ ಸರಿಯಾದ ಉತ್ತರಗಳನ್ನು ಆಯ್ಕೆಮಾಡಿ)</h3>
+      <label><input type="checkbox" name="q6" value="A"> A) ಹಳೆಯ ಕಂಪ್ಯೂಟರ್</label>
+      <label><input type="checkbox" name="q6" value="B"> B) ಕೆಟ್ಟುಹೋದ ಟೆಲಿವಿಷನ್</label>
+      <label><input type="checkbox" name="q6" value="C"> C) ತರಕಾರಿ ಸಿಪ್ಪೆ</label>
+      <label><input type="checkbox" name="q6" value="D"> D) ಹಳೆಯ ಪ್ರಿಂಟರ್</label>
+    </div>
+
+    <div class="question">
+      <h3>7. ಹಳೆಯ ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಾಧನಗಳನ್ನು ಸುಡುವುದು ಸುರಕ್ಷಿತವೇ?</h3>
+      <label><input type="radio" name="q7" value="A"> A) ಹೌದು</label>
+      <label><input type="radio" name="q7" value="B"> B) ಇಲ್ಲ</label>
+    </div>
+
+    <div class="question">
+      <h3>8. ಇ-ತ್ಯಾಜ್ಯದಲ್ಲಿರುವ ಕೆಲವು ಹಾನಿಕಾರಕ ವಸ್ತುಗಳು ಯಾವುದಕ್ಕೆ ಹಾನಿ ಮಾಡಬಹುದು?</h3>
+      <label><input type="radio" name="q8" value="A"> A) ಮಾನವನ ಆರೋಗ್ಯಕ್ಕೆ</label>
+      <label><input type="radio" name="q8" value="B"> B) ಕೂದಲಿಗೆ ಮಾತ್ರ</label>
+      <label><input type="radio" name="q8" value="C"> C) ಉಗುರುಗಳಿಗೆ ಮಾತ್ರ</label>
+      <label><input type="radio" name="q8" value="D"> D) ಯಾವುದಕ್ಕೂ ಹಾನಿ ಮಾಡುವುದಿಲ್ಲ</label>
+    </div>
+
+    <div class="question">
+      <h3>9. ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಾಧನಗಳನ್ನು ದುರಸ್ತಿ ಮಾಡಿ ಮತ್ತೆ ಬಳಸುವುದರಿಂದ ಇ-ತ್ಯಾಜ್ಯ ಕಡಿಮೆಯಾಗಬಹುದೇ?</h3>
+      <label><input type="radio" name="q9" value="A"> A) ಹೌದು</label>
+      <label><input type="radio" name="q9" value="B"> B) ಇಲ್ಲ</label>
+    </div>
+
+    <div class="question">
+      <h3>10. E-Waste Special Campaign ನ ಮುಖ್ಯ ಉದ್ದೇಶ ಯಾವುದು?</h3>
+      <label><input type="radio" name="q10" value="A"> A) ಹೆಚ್ಚು ಸಾಧನಗಳನ್ನು ಖರೀದಿಸುವುದು</label>
+      <label><input type="radio" name="q10" value="B"> B) ಇ-ತ್ಯಾಜ್ಯದ ಬಗ್ಗೆ ಜಾಗೃತಿ ಮೂಡಿಸುವುದು</label>
+      <label><input type="radio" name="q10" value="C"> C) ಹಳೆಯ ಸಾಧನಗಳನ್ನು ಸುಡುವುದು</label>
+      <label><input type="radio" name="q10" value="D"> D) ಸಾಧನಗಳನ್ನು ನದಿಗೆ ಎಸೆಯುವುದು</label>
+    </div>
+
+    <button type="button" class="submit" onclick="checkAnswers()">
+      ಉತ್ತರಗಳನ್ನು ಸಲ್ಲಿಸಿ
+    </button>
+
+    <button type="reset" class="reset" onclick="resetResult()">
+      ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ
+    </button>
+
+  </form>
+
+  <div id="result" aria-live="polite"></div>
+
+</div>
+
+<footer>
+  ♻️ ಇ-ತ್ಯಾಜ್ಯವನ್ನು ಸರಿಯಾಗಿ ವಿಲೇವಾರಿ ಮಾಡಿ — ಪರಿಸರವನ್ನು ರಕ್ಷಿಸಿ!
+</footer>
+
+<script>
+function checkAnswers() {
+  const answers = {
+    q1: "B",
+    q2: "B",
+    q3: "A",
+    q4: "C",
+    q5: "A",
+    q7: "B",
+    q8: "A",
+    q9: "A",
+    q10: "B"
+  };
+
+  let score = 0;
+  let unanswered = [];
+
+  for (let name of Object.keys(answers)) {
+    const selected = document.querySelector(
+      'input[name="' + name + '"]:checked'
+    );
+
+    if (!selected) {
+      unanswered.push(name);
+    } else if (selected.value === answers[name]) {
+      score++;
+    }
+  }
+
+  const q6 = [
+    ...document.querySelectorAll('input[name="q6"]:checked')
+  ].map(input => input.value).sort();
+
+  if (q6.length === 0) {
+    unanswered.push("q6");
+  }
+
+  if (JSON.stringify(q6) === JSON.stringify(["A", "B", "D"])) {
+    score++;
+  }
+
+  const result = document.getElementById("result");
+  result.style.display = "block";
+
+  if (unanswered.length > 0) {
+    result.innerHTML =
+      "<h2>⚠️ ಎಲ್ಲಾ ಪ್ರಶ್ನೆಗಳಿಗೆ ಉತ್ತರಿಸಿ</h2>" +
+      "<p>ಉತ್ತರಿಸದ ಪ್ರಶ್ನೆಗಳು: " + unanswered.length +
+      "</p><p>ಉತ್ತರಿಸಿದ ನಂತರ ಮತ್ತೆ ಸಲ್ಲಿಸಿ.</p>";
+    result.scrollIntoView({behavior: "smooth"});
+    return;
+  }
+
+  let message = "";
+
+  if (score >= 8) {
+    message = "ಅದ್ಭುತ! ನಿಮ್ಮ ಪರಿಸರ ಜ್ಞಾನ ತುಂಬಾ ಚೆನ್ನಾಗಿದೆ! 🌟";
+  } else if (score >= 5) {
+    message = "ಒಳ್ಳೆಯ ಪ್ರಯತ್ನ! ಇನ್ನಷ್ಟು ಕಲಿಯಿರಿ! 👍";
+  } else {
+    message = "ಮತ್ತೊಮ್ಮೆ ಪ್ರಯತ್ನಿಸಿ. ನೀವು ಇನ್ನಷ್ಟು ಕಲಿಯಬಹುದು! 🌱";
+  }
+
+  result.innerHTML =
+    "<h2>🎉 ನಿಮ್ಮ ಫಲಿತಾಂಶ</h2>" +
+    "<h1>" + score + " / 10</h1>" +
+    "<p>" + message + "</p>";
+
+  result.scrollIntoView({behavior: "smooth"});
+}
+
+function resetResult() {
+  document.getElementById("result").style.display = "none";
+}
+</script>
+
+</body>
+</html>
